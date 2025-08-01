@@ -5,7 +5,7 @@ A modern, full-stack social media application built with Next.js, featuring real
 
 ## 🚀 Live Preview
 
-**Demo URL:** [https://your-social-app-demo.vercel.app](https://your-social-app-demo.vercel.app)
+**Demo URL:** [https://social-app-eight-jet.vercel.app/](https://social-app-eight-jet.vercel.app/)
 
 
 ## ✨ Features
@@ -46,10 +46,10 @@ A modern, full-stack social media application built with Next.js, featuring real
 ## 📸 Screenshots
 
 ```
-[/screenshots/s1.png]
-[/screenshots/s3.png]
-[/screenshots/s3.png]
-[/screenshots/s4.png]
+![Screenshot 1](/screenshots/s1.png)
+![Screenshot 2](/screenshots/s3.png)
+![Screenshot 3](/screenshots/s3.png)
+![Screenshot 4](/screenshots/s4.png)
 ```
 
 ## 🚀 Getting Started
