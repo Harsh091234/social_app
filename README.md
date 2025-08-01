@@ -45,12 +45,12 @@ A modern, full-stack social media application built with Next.js, featuring real
 
 ## 📸 Screenshots
 
-```
+
 ![Screenshot 1](/screenshots/s1.png)
 ![Screenshot 2](/screenshots/s3.png)
 ![Screenshot 3](/screenshots/s3.png)
 ![Screenshot 4](/screenshots/s4.png)
-```
+
 
 ## 🚀 Getting Started
 
