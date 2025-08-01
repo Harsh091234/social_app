@@ -2,15 +2,11 @@
 
 A modern, full-stack social media application built with Next.js, featuring real-time interactions, user authentication, and a sleek UI.
 
-## 📋 Summary
-
-This social app provides users with a comprehensive platform to connect, share content, and interact with others. Built with modern web technologies, it offers a seamless experience across devices with features like user profiles, post creation, real-time updates, and secure authentication.
 
 ## 🚀 Live Preview
 
 **Demo URL:** [https://your-social-app-demo.vercel.app](https://your-social-app-demo.vercel.app)
 
-> Replace with your actual deployment URL
 
 ## ✨ Features
 
@@ -49,12 +45,11 @@ This social app provides users with a comprehensive platform to connect, share c
 
 ## 📸 Screenshots
 
-<!-- Add your screenshots here -->
 ```
-[Screenshot 1: Home Feed]
-[Screenshot 2: User Profile]
-[Screenshot 3: Post Creation]
-[Screenshot 4: Mobile View]
+[/screenshots/s1.png]
+[/screenshots/s3.png]
+[/screenshots/s3.png]
+[/screenshots/s4.png]
 ```
 
 ## 🚀 Getting Started
@@ -112,36 +107,13 @@ npm start
 Create a `.env` file in the root directory with the following variables:
 
 ```env
-# Database
 DATABASE_URL="postgresql://username:password@localhost:5432/social_app_db"
-
-# Clerk Authentication
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 CLERK_SECRET_KEY="sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-NEXT_PUBLIC_CLERK_SIGN_IN_URL="/sign-in"
-NEXT_PUBLIC_CLERK_SIGN_UP_URL="/sign-up"
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL="/"
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL="/"
-
-# UploadThing
+UPLOADTHING_TOKEN="xxxxxxxxxxx"
 UPLOADTHING_SECRET="sk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 UPLOADTHING_APP_ID="xxxxxxxxxxxxxxxxx"
-
-# Next.js
-NEXT_PUBLIC_APP_URL="http://localhost:3000"
-
-# Optional: Additional configurations
-NODE_ENV="development"
 ```
-
-### Environment Variables Description
-
-- `DATABASE_URL`: PostgreSQL connection string
-- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`: Clerk publishable key for client-side
-- `CLERK_SECRET_KEY`: Clerk secret key for server-side operations
-- `UPLOADTHING_SECRET`: UploadThing secret key for file uploads
-- `UPLOADTHING_APP_ID`: UploadThing application ID
-- `NEXT_PUBLIC_APP_URL`: Your application URL
 
 ## 📁 Project Structure
 
@@ -159,28 +131,3 @@ my-app/
 ├── public/                  # Static assets
 └── package.json             # Dependencies and scripts
 ```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org/) for the amazing React framework
-- [Clerk](https://clerk.com/) for authentication services
-- [Prisma](https://prisma.io/) for database management
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- [Radix UI](https://radix-ui.com/) for accessible components
-- [UploadThing](https://uploadthing.com/) for file upload services
-
----
-
-Made with ❤️ by [Your Name](https://github.com/yourusername)
