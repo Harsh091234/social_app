@@ -78,8 +78,7 @@ const PostCard = ({post, dbUserId}: {post: Post; dbUserId: string | null}) => {
     }
 
   return (
-    (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden h-full w-full">
       <CardContent className="p-4 sm:p-6">
         <div className="space-y-4">
           <div className="flex space-x-3 sm:space-x-4">
@@ -100,26 +99,40 @@ const PostCard = ({post, dbUserId}: {post: Post; dbUserId: string | null}) => {
                     {post.author.name}
                   </Link>
                   <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <Link href={`/profile/${post.author.username}`}>@{post.author.username}</Link>
+                    <Link href={`/profile/${post.author.username}`}>
+                      @{post.author.username}
+                    </Link>
                     <span>•</span>
-                    <span>{formatDistanceToNow(new Date(post.createdAt))} ago</span>
+                    <span>
+                      {formatDistanceToNow(new Date(post.createdAt))} ago
+                    </span>
                   </div>
                 </div>
                 {/* Check if current user is the post author */}
                 {dbUserId === post.author.id && (
-                  <DeleteAlertDialog isDeleting={isDeleting} onDelete={handleDeletePost} />
+                  <DeleteAlertDialog
+                    isDeleting={isDeleting}
+                    onDelete={handleDeletePost}
+                  />
                 )}
               </div>
-              <p className="mt-2 text-sm text-foreground break-words">{post.content}</p>
+              <p className="mt-2 text-sm text-foreground break-words">
+                {post.content}
+              </p>
             </div>
           </div>
-
+          <div className='flex justify-center'>
+            {post.image && (
+              <div className="mt-3 w-full max-h-[300px] max-w-[500px] overflow-hidden rounded-lg border ">
+                <img
+                  src={post.image}
+                  alt="Post content"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+          </div>
           {/* POST IMAGE */}
-          {post.image && (
-            <div className="rounded-lg overflow-hidden">
-              <img src={post.image} alt="Post content" className="w-full h-auto object-cover" />
-            </div>
-          )}
 
           {/* LIKE & COMMENT BUTTONS */}
           <div className="flex items-center pt-2 space-x-4">
@@ -128,7 +141,9 @@ const PostCard = ({post, dbUserId}: {post: Post; dbUserId: string | null}) => {
                 variant="ghost"
                 size="sm"
                 className={`text-muted-foreground gap-2 ${
-                  hasLiked ? "text-red-500 hover:text-red-600" : "hover:text-red-500"
+                  hasLiked
+                    ? "text-red-500 hover:text-red-600"
+                    : "hover:text-red-500"
                 }`}
                 onClick={handleLiking}
               >
@@ -141,7 +156,11 @@ const PostCard = ({post, dbUserId}: {post: Post; dbUserId: string | null}) => {
               </Button>
             ) : (
               <SignInButton mode="modal">
-                <Button variant="ghost" size="sm" className="text-muted-foreground gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-muted-foreground gap-2"
+                >
                   <HeartIcon className="size-5" />
                   <span>{optimisticLikes}</span>
                 </Button>
@@ -155,7 +174,9 @@ const PostCard = ({post, dbUserId}: {post: Post; dbUserId: string | null}) => {
               onClick={() => setShowComments((prev) => !prev)}
             >
               <MessageCircleIcon
-                className={`size-5 ${showComments ? "fill-blue-500 text-blue-500" : ""}`}
+                className={`size-5 ${
+                  showComments ? "fill-blue-500 text-blue-500" : ""
+                }`}
               />
               <span>{post.comments.length}</span>
             </Button>
@@ -169,11 +190,15 @@ const PostCard = ({post, dbUserId}: {post: Post; dbUserId: string | null}) => {
                 {post.comments.map((comment) => (
                   <div key={comment.id} className="flex space-x-3">
                     <Avatar className="size-8 flex-shrink-0">
-                      <AvatarImage src={comment.author.image ?? "/avatar.png"} />
+                      <AvatarImage
+                        src={comment.author.image ?? "/avatar.png"}
+                      />
                     </Avatar>
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                        <span className="font-medium text-sm">{comment.author.name}</span>
+                        <span className="font-medium text-sm">
+                          {comment.author.name}
+                        </span>
                         <span className="text-sm text-muted-foreground">
                           @{comment.author.username}
                         </span>
@@ -234,8 +259,6 @@ const PostCard = ({post, dbUserId}: {post: Post; dbUserId: string | null}) => {
         </div>
       </CardContent>
     </Card>
-  )
-  
-  )}
+  );}
 
 export default PostCard

@@ -225,7 +225,9 @@ function ProfilePageClient({
             <div className="space-y-6">
               {posts.length > 0 ? (
                 posts.map((post) => (
-                  <PostCard key={post.id} post={post} dbUserId={user.id} />
+                  <div className="h-27 w-full">
+                    <PostCard key={post.id} post={post} dbUserId={user.id} />
+                  </div>
                 ))
               ) : (
                 <div className="text-center py-8 text-muted-foreground">
