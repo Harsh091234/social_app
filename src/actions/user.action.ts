@@ -1,6 +1,6 @@
 "use server";
 import prisma from "@/lib/prisma";
-import { auth, currentUser } from "@clerk/nextjs/server"
+import { auth, clerkClient, currentUser } from "@clerk/nextjs/server"
 import { error } from "console";
 import { revalidatePath } from "next/cache";
 
@@ -155,5 +155,27 @@ export const toggleFollow = async(targetedUserId: string) => {
     } catch (error) {
         console.log("Error in toggleFollow", error);
         return {success: false, error: "Error toggling follow"};
+    }
+}
+
+export const deleteAccount = async() => {
+    try {
+        const { userId } = await auth();
+        
+const client = await clerkClient();
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+  await client.users.deleteUser(userId);
+  await prisma.user.delete({
+    where: {
+        clerkId: userId,
+    }
+
+       
+  });
+  return { success: true };
+    } catch (error) {
+        
     }
 }
